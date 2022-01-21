@@ -14,19 +14,19 @@ if len(guess_letter) != 1:
 print("Searching for " + guess_letter + " in " + guess_word)
 
 if guess_letter == guess_word[0]:
-    print(guess_letter + " found at indecount 0")
+    print(guess_letter + " found at index 0")
 
 if guess_letter == guess_word[1]:
-    print(guess_letter + " found at indecount 1")
+    print(guess_letter + " found at index 1")
 
 if guess_letter == guess_word[2]:
-    print(guess_letter + " found at indecount 2")
+    print(guess_letter + " found at index 2")
 
 if guess_letter == guess_word[3]:
-    print(guess_letter + " found at indecount 3")
+    print(guess_letter + " found at index 3")
 
 if guess_letter == guess_word[4]:
-    print(guess_letter + " found at indecount 4")
+    print(guess_letter + " found at index 4")
 
 count: int = 0
 
