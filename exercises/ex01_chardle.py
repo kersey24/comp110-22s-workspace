@@ -1,6 +1,6 @@
-"""Ecount01 - Chardle - A cute step toward Wordle."""
+"""Exercise01 - Chardle - A cute step toward Wordle."""
 
-__author__ = 730401052
+__author__: str = "730401052"
 
 guess_word: str = input("Enter a 5-character word: ")
 if len(guess_word) != 5:
