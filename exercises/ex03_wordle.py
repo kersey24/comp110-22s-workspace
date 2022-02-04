@@ -7,7 +7,7 @@ def contains_char(word_search: str, char_search: str) -> bool:
     """Searches first parameter for character given in second parameter."""
     assert len(char_search) == 1
     i: int = 0
-    while i < len(word_search): 
+    while i < len(word_search):  # searching indices for character
         if word_search[i] == char_search:
             return True 
         else: 
@@ -23,10 +23,10 @@ def emojified(guess: str, secret: str) -> str:
     YELLOW_BOX: str = "\U0001F7E8"
     i: int = 0
     result: str = ""
-    while i < len(secret):
+    while i < len(secret):  # searching indices of secret for emoji output
         if contains_char(secret, guess[i]) is True:
             if guess[i] == secret[i]: 
-                result += GREEN_BOX
+                result += GREEN_BOX 
             else: 
                 same_character: bool = False
                 alternate: int = 0
@@ -45,17 +45,18 @@ def emojified(guess: str, secret: str) -> str:
 
 
 def input_guess(guess_length: int) -> str: 
+    """Input a guess of specified length."""
     guess_word: str = input(f"Enter a {guess_length} character word: ")
     while len(guess_word) != guess_length:
         guess_word = input(f"That wasn't {guess_length} chars! Try again: ")
-    return guess_word
+    return guess_word  # this will be the users guess 
 
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     secret: str = "codes"
     turn: int = 1
-    win: bool = False
+    win: bool = False  # false until the user wins 
     while not win and turn < 7:
         print(f"=== Turn {turn}/6 ===") 
         guess: str = input_guess(len(secret))
@@ -64,7 +65,7 @@ def main() -> None:
             win = True
         else: 
             turn += 1
-    if win is True: 
+    if win is True:  # outputs of win/lose
         print(f"You won in {turn}/6 turns!")
     else: 
         print("X/6 - Sorry, try again tomorrow!")
