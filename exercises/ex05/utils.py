@@ -38,6 +38,7 @@ def sub(xs: list[int], start: int, end: int) -> list[int]:
 
 
 def concat(a_list: list[int], b_list: list[int]) -> list[int]:
+    """Given two lists of integers return a list with the second list's elements added onto the firsts."""
     new_list: list[int] = []
     i: int = 0
     while i < len(a_list): 
