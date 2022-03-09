@@ -1,32 +1,10 @@
 """."""
 
 
-a: int = 3 
-b: int = 0 
-c: float 
-
-
-def main() -> None:
-    """."""
-    global a 
-    global b 
-    print(fun(a, b))
-
-
-def fun(a: int, b: int) -> list[int]:
-    """."""
-    global c 
-    nums: list[int] = []
-    if b == 0: 
-        while len(nums) < 4:
-            c = a + b / 2 
-            if c % 2 == 0:
-                a += 1 
-                b += 1 
-            else: 
-                nums.append(a)
-                a += 3
-    return nums 
+def main() -> None: 
+    inventory: dict[str, int] = {"bread": 5, "chips": 1, "milk": 10}
+    buy: dict[str, int] = {"bread": 5, "chips": 2, "milk": 7}
+    grocery_list(inventory, buy)
 
 
 if __name__ == "__main__":
@@ -77,3 +55,11 @@ def average_grades(grades: dict[str, list[int]]) -> dict[str, float]:
             total += all
         average[students] = total / len(grades[students])
     return average
+
+
+def grocery_list(a: dict[str, int], b: dict[str, int]) -> list[str]:
+    result: list[str] = []
+    for key in b:
+        if b[key] >= a[key]:
+            result.append(key)
+    return result
